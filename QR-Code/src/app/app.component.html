@@ -1,0 +1,24 @@
+<h1>QR Code</h1>
+<br />
+<br />
+<label>URL : </label>
+<input
+  type="text"
+  (change)="changeBase($event)"
+  [value]="qrInfo"
+  style="width: 210px"
+/>
+<br />
+<br />
+Name: <input type="text" (change)="changeName($event)" style="width: 210px" />
+<br />
+<br />
+Age: <input type="text" (change)="changeAge($event)" style="width: 210px" />
+<br />
+<br />
+<p>{{ qrInfo }}</p>
+<br />
+<br />
+<div>
+  <qr-code [value]="qrInfo" [size]="150"></qr-code>
+</div>

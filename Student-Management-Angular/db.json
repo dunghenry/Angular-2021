@@ -1,0 +1,20 @@
+{
+  "students": [
+    {
+      "id": "001",
+      "code": "SV01",
+      "gender": "Nam",
+      "fullName": "Trần Văn Dũng",
+      "email": "trandungksnb00@gmail.com",
+      "phone": "0774903560"
+    },
+    {
+      "id": "002",
+      "code": "SV02",
+      "gender": "Nam",
+      "fullName": "Trần Văn A",
+      "email": "tranvana@gmail.com",
+      "phone": "01234567"
+    }
+  ]
+}

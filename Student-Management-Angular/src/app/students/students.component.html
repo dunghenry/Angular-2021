@@ -1,0 +1,31 @@
+<div class="student" *ngIf="students.length; else noData">
+  <h1 class="title">Thông tin chi tiết sinh viên</h1>
+  <table style="width: 80%; margin-left: auto; margin-right: auto">
+    <tr>
+      <th>Action</th>
+      <th>ID</th>
+      <th>Mã sinh viên</th>
+      <th>Giới tính</th>
+      <th>Họ Tên</th>
+      <th>Email</th>
+      <th>Điện thoại</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td><mat-icon style="cursor: pointer" (click)="deleteStudent(student.id)">clear</mat-icon>&nbsp;&nbsp;&nbsp;&nbsp;<mat-icon style="cursor: pointer" (click)="editStudent(student)">create</mat-icon></td>
+      <td>{{ student.id }}</td>
+      <td>{{ student.code }}</td>
+      <td>{{ student.gender }}</td>
+      <td>{{ student.fullName }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.phone }}</td>
+    </tr>
+    
+  </table>
+  <a
+  [routerLink]="['/addstudent']"
+  [routerLinkActive]="'active-link'"
+  >
+  Thêm sinh viên
+  </a>
+</div>
+<ng-template #noData><h1>Loading data...</h1></ng-template>

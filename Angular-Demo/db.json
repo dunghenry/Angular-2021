@@ -1,0 +1,16 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server 1", "author": "typicode" },
+    { "id": 2, "title": "json-server 2", "author": "TranDung" },
+    { "id": 3, "title": "json-server 3", "author": "NoNo" }
+  ],
+  "comments": [
+    { "id": 1, "body": "Day la cmt thu 1", "postId": 1 },
+    { "id": 2, "body": "Day la cmt thu 2", "postId": 2 },
+    { "id": 3, "body": "Day la cmt thu 3", "postId": 3 },
+    { "id": 4, "body": "Day la cmt thu 4", "postId": 4 },
+    { "id": 5, "body": "Day la cmt thu 5", "postId": 5 },
+    { "id": 6, "body": "Day la cmt thu 6", "postId": 6 }
+  ],
+  "profile": { "name": "Dũng", "age": 30, "gender": "male"}
+}

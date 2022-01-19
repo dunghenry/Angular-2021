@@ -1,0 +1,12 @@
+<div class="main">
+    <h1>This is ForLoop Page</h1>
+    <p *ngFor="let work of works">{{work}}</p>
+    <h2>Lựa chọn công việc của bạn:</h2>
+    <select>
+        <option *ngFor="let work of works">{{work}}</option>
+    </select>
+    <br>
+    <br>
+    <button (click)="Addworks()">Add works</button>
+    <p>{{works | json}}</p>
+</div>

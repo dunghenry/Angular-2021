@@ -1,0 +1,33 @@
+table, th, td {
+    border:1px solid rgb(207, 201, 201);
+    text-align:center;
+  }
+h1{
+    text-align:center;
+}
+h1.errorMessage{
+    color: red;
+    font-size: 20px;
+    font-weight: 400;
+}
+h1.title{
+    text-transform: uppercase;
+}
+.student{
+    position: relative;
+}
+a{
+    position: absolute;
+    left: calc(50% - 60px);
+    top: 120%;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    display: inline-block;
+    text-align: center;
+    background-color: blue;
+    border-radius: 5px;
+   
+    
+}

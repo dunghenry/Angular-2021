@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+table{
+    border-collapse: collapse;
+}
+tr,th,td{
+    border: 1px solid #ccc;
+}
+html, body { height: 100%; overflow-x: hidden; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+span.sorting{
+    display: flex;
+    svg{
+        cursor: pointer;
+    }
+}

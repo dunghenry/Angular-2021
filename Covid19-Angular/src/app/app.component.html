@@ -1,0 +1,73 @@
+<div class="chartjs-container" *ngIf="chartIsReady">
+    <canvas baseChart 
+        [datasets]="barChartData" 
+        [labels]="barChartLabels" 
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins" 
+        [legend]="barChartLegend" 
+        [colors]="chartColors"
+        [chartType]="barChartType">
+    </canvas>
+</div>
+
+<div class="table container-fluid" *ngIf="countriesData.length; else loading">
+    <h4>Số liệu thế giới:</h4>
+    <table class="table">
+        <tr>
+            <th *ngFor="let data of globalData | keyvalue">{{data.key}}</th>
+        </tr>
+        <tr>
+            <td *ngFor="let data of globalData | keyvalue">
+                <span *ngIf="data.key === 'Date'">
+                    {{valueToString(data.value) | date: 'shortDate'  }} 
+                </span>
+                <span *ngIf="data.key !== 'Date'">
+                    {{formatCurrency(data.value) | number : '0.0'}} 
+                </span>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="countryFilter"
+          (ngModelChange)="countryFilterControl.next($event)"
+          >
+        </form>
+      </nav>
+      <br>
+    <h4>Số liệu từng quốc gia:</h4>
+    <table class="table">
+        <tr>
+            <th *ngFor="let data of countriesData [0] | keyvalue">
+                <span class="sorting">
+                    <svg (click)="orderBy(data.key, 'asc')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                      </svg>
+                      <svg (click)="orderBy(data.key, 'desc')" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                      </svg>
+                    <span>&nbsp;{{ (data.key) }}</span>
+                  </span>
+            </th>
+        </tr>
+        <tr *ngFor="let row of countriesData">
+           
+            <td *ngFor="let data of row | keyvalue" >
+                <span *ngIf="data.key === 'Date'">
+                    {{valueToString(data.value) | date: 'shortDate'  }} 
+                </span>
+                <span *ngIf="data.key === 'TotalConfirmed' || data.key === 'TotalDeaths'">
+                    {{formatCurrency(data.value) | number : '0.0'}} 
+                </span>
+                <span *ngIf="data.key !== 'Premium' && data.key !== 'TotalConfirmed' && data.key !== 'TotalDeaths' && data.key !== 'Date'">
+                    {{data.value}}
+                </span>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #loading >
+   <h2 style="text-align: center; color: blue">Loading...</h2>
+</ng-template>

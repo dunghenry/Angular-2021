@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>This is Form</h1>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" required id="name" [(ngModel)]="name" name="name">
+        </div>
+        <span *ngIf="name===''" class="error">* Cần phải nhập name 🤣</span>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" required id="password" [(ngModel)]="password"  name="password">
+        </div>
+        <span *ngIf="password===''" class="error">* Cần phải nhập password 🤣</span>
+        <br>
+       <div class="form-group">
+            <label for="vehicle">Vehicle</label>
+            &nbsp;
+            <select (change)="mySelect($event)">
+                <option *ngFor="let vehicle of vehicles">
+                {{ vehicle }}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-warning" [disabled] = "!myForm.form.valid">Submit</button>
+    </form>
+</div>

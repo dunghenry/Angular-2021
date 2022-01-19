@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Hello {{fullName | lowercase | uppercase}}</h1>
+  <h2>Tuổi của bạn là {{age | number}}</h2>
+  <!-- <span *ngIf="age >= 18" class="big">Bạn đã già</span>
+  <span *ngIf="age < 18">Bạn quá trẻ</span> -->
+  <span *ngIf="age < 18; then condition1; else condition2"></span>
+  <br>
+  <ng-template #condition1><span appBold>Bạn quá trẻ</span></ng-template>
+  <ng-template #condition2>Bạn đã già</ng-template>
+  <!-- Tối ưu hơn cách bên trên -->
+
+  <br>
+  <h3>Danh sách xe: </h3>
+  <div *ngFor="let vehicle of vehicles">
+    <li>{{ vehicle }}</li>
+  </div>
+  <h3>Select:</h3>
+  <select name="" id="">
+    <option value="" *ngFor="let vehicle of vehicles">
+      {{ vehicle }}
+    </option>
+  </select>
+  <br>
+  <br>
+  <input type="text" name="" id="" [(ngModel)]="fullName">
+  <br><br>
+  <button class="btn btn-outline-success" (click)="myFunction()">Click Here</button>
+  <br>
+  <br>
+  <span>{{ vehicles | json}}</span>
+  <p>Price: {{ price | currency}}</p>
+</div>

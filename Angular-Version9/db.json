@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "Oke title",
+      "author": "Dung",
+      "id": 2
+    },
+    {
+      "title": "Testing",
+      "author": "Author testing",
+      "id": 3
+    },
+    {
+      "title": "",
+      "author": "",
+      "id": 4
+    },
+    {
+      "title": " ",
+      "author": "",
+      "id": 5
+    },
+    {
+      "title": " ",
+      "author": "",
+      "id": 6
+    },
+    {
+      "title": "Oke ",
+      "author": "dũng",
+      "id": 7
+    },
+    {
+      "title": "Node js",
+      "author": "TVD",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment 1",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment 2",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "Trần Văn Dũng",
+    "id": 1,
+    "description": "Data của trần văn dũng"
+  }
+}

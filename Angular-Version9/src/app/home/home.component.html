@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 appStyleText>This is Home Page</h1>
+    <h2>Xin chào bạn : {{fullName | uppercase}}</h2>
+    <input  [(ngModel)]="fullName"/>
+    <p>Tuổi của bạn là : {{age | number : "0.3" | currency: "VN"}}</p>
+    <button (click)="Increase()">Increase age</button>
+    <!-- !ngIf -->
+    <ng-template [ngIf]="age > 18"><h1>Tuổi của bạn > 18</h1></ng-template>
+
+    <p *ngIf="age > 18">Tuổi của bạn > 18</p>
+    <p *ngIf="age < 18">Tuổi của bạn < 18</p>
+
+    <p *ngIf="age > 18; else underAge">Tuổi của bạn > 18</p>
+    <ng-template #underAge>Tuổi của bạn < 18</ng-template>
+
+    <p *ngIf="age > 18; then overAge else underage"></p>
+    <ng-template #overAge>Bạn trên 18 tuổi hehe</ng-template>
+    <ng-template #underage>Bạn dưới 18 tuổi haha</ng-template>
+    <div *ngFor="let item of data">
+        <p>{{item.id}}</p>
+        <p>{{item.body}}</p>
+
+    </div>
+</div>

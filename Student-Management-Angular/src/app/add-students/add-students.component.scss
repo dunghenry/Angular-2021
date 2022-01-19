@@ -1,0 +1,37 @@
+.add-student{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    h1{
+        text-align: center;
+    }
+}
+input[type="text"]{
+    width: 350px;
+    float: right;
+    padding: 7px 10px;
+    border: none;
+    outline: none;
+}
+input[type="email"]{
+    width: 350px;
+    float: right;
+    border: none;
+    padding: 7px 10px;
+    outline: none;
+}
+.form-group{
+    margin: 45px 0;
+    height: 100%;
+    position: relative;
+}
+p{
+    position: absolute;
+    top: 30px;
+    left: 130px;
+    font-size: 13px;
+    color: hsl(0, 87%, 55%);
+}
+button{
+    cursor: pointer;
+}
